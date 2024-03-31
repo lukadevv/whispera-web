@@ -1,7 +1,7 @@
 # Next.js Realtime Chat Application with Supabase
 
-<img src="https://i.imgur.com/r22Ijd4.png" alt="Next.js Logo" width="50%" align="left">
-<img src="https://i.imgur.com/LV5Ywc8.png" alt="Supabase Logo" width="50%" align="right">
+<img src="https://i.imgur.com/r22Ijd4.png" alt="Next.js Logo" width="49%">
+<img src="https://i.imgur.com/LV5Ywc8.png" alt="Supabase Logo" width="49%">
 
 This is a real-time chat application built with Next.js utilizing server-side rendering (SSR) with serverless functions, server actions, and real-time capabilities. It integrates with Supabase as the backend API and is written entirely in TypeScript.
 
