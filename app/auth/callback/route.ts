@@ -1,4 +1,4 @@
-import { createClient } from "@/utils/supabase/server";
+import { supabaseServer } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
@@ -10,10 +10,10 @@ export async function GET(request: Request) {
   const origin = requestUrl.origin;
 
   if (code) {
-    const supabase = createClient();
+    const supabase = supabaseServer(false);
     await supabase.auth.exchangeCodeForSession(code);
   }
 
   // URL to redirect to after sign up process completes
-  return NextResponse.redirect(`${origin}/protected`);
+  return NextResponse.redirect(`${origin}/chats`);
 }

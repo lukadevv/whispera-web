@@ -4,39 +4,72 @@
 
 @layer base {
   :root {
-    --background: 200 20% 98%;
-    --btn-background: 200 10% 91%;
-    --btn-background-hover: 200 10% 89%;
-    --foreground: 200 50% 3%;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background: 200 50% 3%;
-      --btn-background: 200 10% 9%;
-      --btn-background-hover: 200 10% 12%;
-      --foreground: 200 20% 96%;
-    }
+    --background: 138 10% 5%;
+    --foreground: 138 5% 90%;
+    --card: 138 5% 4%;
+    --card-foreground: 138 5% 90%;
+    --popover: 138 10% 5%;
+    --popover-foreground: 138 5% 90%;
+    --primary: 138 66% 26%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 138 10% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 100 10% 15%;
+    --muted-foreground: 138 5% 60%;
+    --accent: 100 10% 15%;
+    --accent-foreground: 138 5% 90%;
+    --destructive: 0 50% 30%;
+    --destructive-foreground: 138 5% 90%;
+    --border: 138 20% 18%;
+    --input: 138 20% 18%;
+    --ring: 138 66% 26%;
+    --radius: 0.5rem;
   }
 }
 
 @layer base {
   * {
-    @apply border-foreground/20;
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-.animate-in {
-  animation: animateIn 0.3s ease 0.15s both;
+body {
+  overflow-x: hidden;
 }
 
-@keyframes animateIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+main {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--secondary));
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary));
+  background-image: -webkit-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  border-radius: 5px;
 }

@@ -1,27 +1,28 @@
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
+import { cn } from "@/lib/utils";
+import { Toaster } from "@/lib/local/components/molecules/Toaster";
 
-const defaultUrl = process.env.VERCEL_URL
-  ? `https://${process.env.VERCEL_URL}`
+const defaultUrl = process.env.NEXT_PUBLIC_URL
+  ? `https://${process.env.NEXT_PUBLIC_URL}`
   : "http://localhost:3000";
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Next.js and Supabase Starter Kit",
-  description: "The fastest way to build apps with Next.js and Supabase",
+  title: "Whispera - Chat",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={GeistSans.className}>
-      <body className="bg-background text-foreground">
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
-        </main>
+      <body
+        className={cn(
+          "bg-background font-sans antialiased bg-background text-foreground",
+          GeistSans.style
+        )}
+      >
+        {children}
+        <Toaster />
       </body>
     </html>
   );

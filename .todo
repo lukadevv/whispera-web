@@ -1,0 +1,10 @@
+# Sorted
+
+- Improve de UI
+* Fix UI
+* Fix navigation routes
+- Add responsive UI
+- Add multi-language
+- Add ChatProviderMock for Playground component usage
+- Use code-gen fragments
+- Use apollo cache
